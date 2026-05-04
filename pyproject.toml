@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fastapi-evil"
+version = "0.1.0"
+description = "A drop-in FastAPI wrapper that adds intentional request slowdowns — for chaos engineering, testing, and mayhem."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Mohsin", email = "mohsin.doer@gmail.com" }]
+keywords = ["fastapi", "chaos-engineering", "testing", "middleware", "slowdown", "evil"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: FastAPI",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware",
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.100.0",
+    "starlette>=0.27.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/mohsin/fastapi-evil"
+Repository = "https://github.com/mohsin/fastapi-evil"
+Issues = "https://github.com/mohsin/fastapi-evil/issues"
+Changelog = "https://github.com/mohsin/fastapi-evil/blob/main/CHANGELOG.md"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fastapi_evil"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "httpx>=0.27",
+    "freezegun>=1.5",
+    "anyio[trio]>=4.0",
+    "uvicorn[standard]>=0.30",
+]
