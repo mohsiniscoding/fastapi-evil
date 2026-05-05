@@ -33,6 +33,26 @@ app = EvilAPI()  # requests now take 10 seconds. you're welcome.
 
 ```bash
 pip install fastapi-evil
+# or with uv
+uv add fastapi-evil
+```
+
+To use the `fastapi dev` CLI (Uvicorn + hot reload), install with the `standard` extra:
+
+```bash
+pip install "fastapi-evil[standard]"
+# or with uv
+uv add "fastapi-evil[standard]"
+```
+
+Then run your app:
+
+```bash
+# pip
+fastapi dev main.py
+
+# uv
+uv run fastapi dev main.py
 ```
 
 ---

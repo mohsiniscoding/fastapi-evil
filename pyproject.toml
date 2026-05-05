@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "fastapi-evil"
-version = "0.1.0"
+version = "0.1.1"
 description = "A drop-in FastAPI wrapper that adds intentional request slowdowns — for chaos engineering, testing, and mayhem."
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -25,6 +25,9 @@ dependencies = [
     "fastapi>=0.100.0",
     "starlette>=0.27.0",
 ]
+
+[project.optional-dependencies]
+standard = ["fastapi[standard]>=0.100.0"]
 
 [project.urls]
 Homepage = "https://github.com/mohsin/fastapi-evil"
