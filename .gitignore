@@ -22,6 +22,11 @@ build/
 .coverage
 htmlcov/
 
+# Environment / secrets
+.env
+.env.*
+*.env
+
 # OS
 .DS_Store
 Thumbs.db

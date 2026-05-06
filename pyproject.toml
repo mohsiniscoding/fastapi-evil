@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "fastapi-evil"
-version = "0.1.1"
+version = "0.1.3"
 description = "A drop-in FastAPI wrapper that adds intentional request slowdowns — for chaos engineering, testing, and mayhem."
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -30,13 +30,21 @@ dependencies = [
 standard = ["fastapi[standard]>=0.100.0"]
 
 [project.urls]
-Homepage = "https://github.com/mohsin/fastapi-evil"
-Repository = "https://github.com/mohsin/fastapi-evil"
-Issues = "https://github.com/mohsin/fastapi-evil/issues"
-Changelog = "https://github.com/mohsin/fastapi-evil/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/mohsiniscoding/fastapi-evil"
+Repository = "https://github.com/mohsiniscoding/fastapi-evil"
+Issues = "https://github.com/mohsiniscoding/fastapi-evil/issues"
+Changelog = "https://github.com/mohsiniscoding/fastapi-evil/blob/main/CHANGELOG.md"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/fastapi_evil"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    ".env",
+    ".env.*",
+    "*.env",
+    "dist/",
+]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

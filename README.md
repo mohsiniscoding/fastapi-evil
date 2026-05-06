@@ -184,7 +184,7 @@ slow_until=datetime(2026, 12, 31, 23, 59, 59)
 ## Dev Setup
 
 ```bash
-git clone https://github.com/mohsin/fastapi-evil
+git clone https://github.com/mohsiniscoding/fastapi-evil
 cd fastapi-evil
 uv sync
 uv run pytest
